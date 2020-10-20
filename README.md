@@ -15,11 +15,18 @@ table(beer_awards$state)
 
 
 beer_awards %>%
+
     select(state,medal) %>%
+    
     filter(state==c("CA","CO","OR","PA","TX","WA","WY")) %>%
+    
     ggplot(aes(x=state,fill=medal))+
+    
     geom_bar(position = "dodge")+
+    
     scale_fill_manual(values=c("brown","gold","dark grey" ))+
+    
     labs(x="State",y="Count",title="Medals won by top 7 winning states")+
+    
     theme(panel.background=element_blank(),text=element_text(family="times new roman",face='bold',size=16))
     
